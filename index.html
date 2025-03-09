@@ -3,196 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PORTIFÓLIO DA GRAZI BERMOND</title>
+    <title>Portfólio da Grazi Bermond</title>
     <style>
         body {
             background-color: #113d63;
-            font-family: Calibri, sans-serif;
-            margin: 0.5cm;
             color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
+            font-family: Calibri, sans-serif;
+            margin: 0.5cm 0.3cm 0.1cm 0.5cm;
         }
 
-        .bloco-titulo {
-            height: 5%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .titulo {
             text-align: center;
-        }
-
-        .bloco-titulo h1 {
-            color: #ff8c00;
-            font-size: 32px;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        .espaco-entre-conteudos {
-            height: 3%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .linha-horizontal {
-            width: 100%;
-            border-bottom: 2px solid #ff8c00;
-        }
-
-        .bloco-subtitulo {
-            height: 12%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .bloco-subtitulo h2 {
             font-size: 24px;
             font-weight: bold;
-            margin: 0;
+            color: #ff8c00;
+            padding: 10px 0;
         }
 
-        .bloco-subtitulo p {
-            font-size: 11px;
-            margin: 5px 0 0 0;
+        .subtitulo {
+            text-align: center;
+            font-size: 19px;
+            padding: 10px 0;
         }
 
-        .bloco-botoes {
-            height: 5%;
+        .linha {
+            height: 1px;
+            background-color: #ff8c00;
+            margin: 10px 0;
+        }
+
+        .linha2 {
+            height: 1px;
+            background-color: #113d63;
+            margin: 10px 0;
+        }
+
+        .botoes {
             display: flex;
             justify-content: center;
-            align-items: center;
-        }
-
-        .matriz-botoes {
-            width: 50%;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
+            margin: 20px 0;
         }
 
         .botao {
             background-color: #ff8c00;
             color: #ffffff;
             font-size: 13px;
+            padding: 10px 20px;
             border: none;
-            padding: 10px 15px;
             border-radius: 5px;
+            margin: 0 10px;
             cursor: pointer;
-            text-align: center;
         }
 
-        .conteudo-dropdown {
-            position: absolute;
-            background-color: aliceblue;
-            min-width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            display: none;
-            color: #113d63;
-            font-size: 12px;
-            padding: 10px;
-            white-space: pre-line;
-        }
-
-        .botao:hover .conteudo-dropdown {
-            display: block;
-        }
-
-        .espaco-vazio {
-            height: 5%;
-        }
-
-        .bloco-matriz-projetos {
-            height: 45%;
+        .matriz {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 10px;
+            height: 25vh;
         }
 
-        .projeto {
+        .matriz-item {
             display: grid;
             grid-template-rows: 40% 60%;
         }
 
-        .projeto img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border: 2px solid aliceblue;
+        .imagem {
+            border: 2px solid lightblue;
+            text-align: center;
+            padding: 5px;
         }
 
-        .projeto .texto-projeto {
-            background-color: aliceblue;
+        .texto-caixa {
+            background-color: lightblue;
             color: #113d63;
             font-size: 12px;
-            padding: 10px;
             text-align: center;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
 
-    <div class="bloco-titulo">
-        <h1>PORTIFÓLIO DA GRAZI BERMOND</h1>
+    <div class="titulo">Portfólio da Grazi Bermond</div>
+
+    <div class="linha"></div>
+
+    <div class="subtitulo">Salve Pessoal, espero que estejam em paz. Agradeço pela visita.</div>
+
+    <div class="linha2"></div>
+
+    <div class="botoes">
+        <button class="botao" onclick="window.open('https://www.linkedin.com/in/grazibermond/', '_blank')">LinkedIn</button>
+        <button class="botao" onclick="window.open('https://wa.me/5511975366533', '_blank')">WhatsApp</button>
+        <button class="botao" onclick="location.href='mailto:grabermond@gmail.com'">Email</button>
     </div>
 
-    <div class="espaco-entre-conteudos">
-        <div class="linha-horizontal"></div>
-    </div>
+    <div class="linha2"></div>
 
-    <div class="bloco-subtitulo">
-        <h2>Salve Pessoal! Espero que estejam em Paz.</h2>
-        <h2>Agradeço pela visita.</h2>
-        <p>#gratidaoaDeus #portifolio #carreiradados #umpassodecadavez</p>
-    </div>
-
-    <div class="bloco-botoes">
-        <div class="matriz-botoes">
-            <div class="botao">
-                Hard Skills
-                <div class="conteudo-dropdown">
-                    Consultas SQL: Teradata, Haddop e Marketing Cloud SQL Studio. <br>
-                    Manipulação e Tratamento de dados: Linguagem M, DAX, Knime e Alteryx. <br>
-                    Visualização de Dados: Power BI e Excel. <br>
-                    Automação de Processos. Power Automate, Knime e Alteryx.
-                </div>
-            </div>
-            <div class="botao">
-                Soft Skills
-                <div class="conteudo-dropdown">
-                    Faço perguntas quando tenho dúvidas. <br>
-                    Fico feliz em compartilhar com meus colegas a forma como solucionei algum problema. <br>
-                    Procuro entender qual é o valor das minhas atividades para os meus pares/outras áreas. <br>
-                    Acredito que seja importante trabalhar de forma organizada. <br>
-                    Tendo oportunidade, tento criar uma forma de simplificar/automatizar a execuções das atividades que executo.
-                </div>
-            </div>
-            <a href="https://www.linkedin.com/in/grazibermond/" target="_blank" class="botao">LinkedIn</a>
-            <a href="https://wa.me/5511975366533" target="_blank" class="botao">WhatsApp</a>
-            <a href="mailto:grabermond@gmail.com" class="botao">Email</a>
+    <div class="matriz">
+        <div class="matriz-item">
+            <div class="imagem"><img src="URL_DA_SUA_IMAGEM_1" alt="Imagem ETL" style="max-width: 100%; max-height: 100%;"></div>
+            <div class="texto-caixa">Processo ETL</div>
         </div>
-    </div>
-
-    <div class="espaco-vazio"></div>
-
-    <div class="bloco-matriz-projetos">
-        <div class="projeto">
-            <img src="URL_DA_IMAGEM_ETL" alt="Processo ETL">
-            <div class="texto-projeto">Processo ETL</div>
+        <div class="matriz-item">
+            <div class="imagem"><img src="URL_DA_SUA_IMAGEM_2" alt="Imagem Power BI" style="max-width: 100%; max-height: 100%;"></div>
+            <div class="texto-caixa">Desenvolvimento Power BI</div>
         </div>
-        <div class="projeto">
-            <img src="URL_DA_IMAGEM_SQL" alt="SQL">
-            <div class="texto-projeto">SQL</div>
-        </div>
-        <div class="projeto">
-            <img src="URL_DA_IMAGEM_VISUALIZACAO" alt="Visualização de Dados">
-            <div class="texto-projeto">Visualização de Dados</div>
+        <div class="matriz-item">
+            <div class="imagem"><img src="URL_DA_SUA_IMAGEM_3" alt="Imagem KPIs" style="max-width: 100%; max-height: 100%;"></div>
+            <div class="texto-caixa">Métricas, Indicadores e KPIs</div>
         </div>
     </div>
 
