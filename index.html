@@ -7,112 +7,191 @@
     <style>
         body {
             background-color: #113d63;
-            color: #ffffff;
             font-family: Calibri, sans-serif;
             margin: 0.5cm 0.3cm 0.1cm 0.5cm;
+            color: #ffffff;
         }
-
-        .titulo {
+        .header {
             text-align: center;
+        }
+        .header h1 {
+            color: #ff8c00;
             font-size: 24px;
             font-weight: bold;
-            color: #ff8c00;
-            padding: 10px 0;
+            margin-bottom: 0;
         }
-
-        .subtitulo {
-            text-align: center;
+        .header p {
             font-size: 19px;
-            padding: 10px 0;
+            margin-top: 5px;
         }
-
-        .linha {
-            height: 1px;
-            background-color: #ff8c00;
+        .divider {
+            border-bottom: 1px solid #ff8c00;
             margin: 10px 0;
         }
-
-        .linha2 {
-            height: 1px;
-            background-color: #113d63;
-            margin: 10px 0;
-        }
-
-        .botoes {
+        .button-container {
             display: flex;
             justify-content: center;
             margin: 20px 0;
         }
-
-        .botao {
+        .button-container a {
             background-color: #ff8c00;
             color: #ffffff;
             font-size: 13px;
             padding: 10px 20px;
-            border: none;
+            text-decoration: none;
             border-radius: 5px;
             margin: 0 10px;
+        }
+        .project-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .project-item {
+            width: 30%;
+            margin-bottom: 20px;
+        }
+        .project-item img {
+            width: 100%;
+            height: auto;
             cursor: pointer;
         }
-
-        .matriz {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            height: 20vh;
-        }
-
-        .matriz-item {
-            display: grid;
-            grid-template-rows: 70% 30%;
-        }
-
-        .imagem {
-            text-align: center;
-            padding: 5px;
-        }
-
-        .texto-caixa {
-            background-color: white;
+        .project-item .text-box {
+            background-color: #ffffff;
             color: #113d63;
-            font-size: 12px;
-            text-align: center;
             padding: 10px;
+        }
+        .text-box h2 {
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .text-box p {
+            font-size: 13px;
+            font-style: italic;
+            text-align: justify;
+        }
+        .text-box ul {
+            font-size: 12px;
+            text-align: justify;
+            padding-left: 20px;
+        }
+        .text-box ul li {
+            margin-bottom: 5px;
+        }
+        .zoom-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .zoom-overlay img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .zoom-overlay.active {
+            display: flex;
+        }
+        .project-item .content-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-item .text-container {
+            height: 200px;
+            overflow-y: auto;
+        }
+
+        .project-item .image-container {
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .project-item .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     </style>
 </head>
 <body>
+    <div class="header">
+        <h1>Portfólio da Grazi Bermond</h1>
+        <p>Salve Pessoal, espero que estejam em paz. Agradeço pela visita.</p>
+    </div>
+    <div class="divider"></div>
+    <div class="button-container">
+        <a href="https://www.linkedin.com/in/grazibermond/" target="_blank">LinkedIn</a>
+        <a href="https://wa.me/5511975366533" target="_blank">WhatsApp</a>
+        <a href="mailto:grabermond@gmail.com">Email</a>
+    </div>
+    <div class="divider" style="border-color: #113d63;"></div>
+    <div class="project-container">
+        <div class="project-item">
+            <div class="content-container">
+                <div class="text-container text-box">
+                    <h2>Processo ETL</h2>
+                    <p>Filtros, Alteração de gráficos e botões</p>
+                    <ul>
+                        <li>Na imagem da 'Visão macro', ...</li>
+                        <li>Na imagem da 'Alterar a Visualização dos Gráficos', ...</li>
+                        <li>Na imagem da 'Filtro',...</li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="imagens/ETL_RelatorioerencialVendas.png" alt="Processo ETL" onclick="zoomImage('imagens/ETL_RelatorioerencialVendas.png')">
+                </div>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="content-container">
+                <div class="text-container text-box">
+                    <h2>Desenvolvimento Power BI</h2>
+                    <p>Filtros, Alteração de gráficos e botões</p>
+                    <ul>
+                        <li>Na imagem da 'Visão macro', ...</li>
+                        <li>Na imagem da 'Alterar a Visualização dos Gráficos', ...</li>
+                        <li>Na imagem da 'Filtro',...</li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="imagens/PBI_RelatorioerencialVendas.png" alt="Desenvolvimento Power BI" onclick="zoomImage('imagens/PBI_RelatorioerencialVendas.png')">
+                </div>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="content-container">
+                <div class="text-container text-box">
+                    <p>Métricas, Indicadores e KPI's</p>
+                </div>
+                <div class="image-container">
+                    <img src="imagens/sua-imagem.png" alt="Métricas, Indicadores e KPI's" onclick="zoomImage('imagens/sua-imagem.png')">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divider"></div>
 
-    <div class="titulo">Portfólio da Grazi Bermond</div>
-
-    <div class="linha"></div>
-
-    <div class="subtitulo">Salve Pessoal, espero que estejam em paz. Agradeço pela visita.</div>
-
-    <div class="linha2"></div>
-
-    <div class="botoes">
-        <button class="botao" onclick="window.open('https://www.linkedin.com/in/grazibermond/', '_blank')">LinkedIn</button>
-        <button class="botao" onclick="window.open('https://wa.me/5511975366533', '_blank')">WhatsApp</button>
-        <button class="botao" onclick="location.href='mailto:grabermond@gmail.com'">Email</button>
+    <div class="zoom-overlay" id="zoomOverlay">
+        <img src="" alt="Imagem Ampliada" id="zoomedImage">
     </div>
 
-    <div class="linha2"></div>
+    <script>
+        function zoomImage(imageUrl) {
+            document.getElementById('zoomedImage').src = imageUrl;
+            document.getElementById('zoomOverlay').classList.add('active');
+        }
 
-    <div class="matriz">
-        <div class="matriz-item">
-            <div class="imagem"><img src="imagens/etl.jpg" alt="Imagem ETL" style="max-width: 100%; max-height: 100%;"></div>
-            <div class="texto-caixa">Processo ETL</div>
-        </div>
-        <div class="matriz-item">
-            <div class="imagem"><img src="imagens/PowerBI.png" alt="Imagem Power BI" style="max-width: 100%; max-height: 100%;"></div>
-            <div class="texto-caixa">Desenvolvimento Power BI</div>
-        </div>
-        <div class="matriz-item">
-            <div class="imagem"><img src="imagens/Indicadores.jpg" alt="Imagem KPIs" style="max-width: 100%; max-height: 100%;"></div>
-            <div class="texto-caixa">Métricas, Indicadores e KPIs</div>
-        </div>
-    </div>
-
+        document.getElementById('zoomOverlay').addEventListener('click', function() {
+            this.classList.remove('active');
+        });
+    </script>
 </body>
 </html>
