@@ -138,11 +138,13 @@
             <div class="content-container">
                 <div class="text-container text-box">
                     <h2>Processo ETL</h2>
-                    <p>Filtros, Alteração de gráficos e botões</p>
+                    <p>Arquivo CSV tratado no Databricks</p>
                     <ul>
-                        <li>Na imagem da 'Visão macro', ...</li>
-                        <li>Na imagem da 'Alterar a Visualização dos Gráficos', ...</li>
-                        <li>Na imagem da 'Filtro',...</li>
+                        <li>O dataset é uma amostra de dados do Power BI nomeada como "financials".</li>
+                        <li>Como os valores do dataset estavam em inglês, utilizei o laço "for" para realizar a tradução das colunas, seguido da função "withColumnRenamed".</li>
+                        <li>Utilizei também o laço "for" para traduzir o conteúdo das colunas, juntamente com a função "regexp_replace".</li>
+                        <li>Fiz a conversão dos valores que estavam como "string" para o formato "decimal". Um ponto importante é que no arquivo csv os valores decimais estavam como "vírgula" e foi necessário substituí-los como "ponto" para realizar a converção utilizando a função "cast".</li>
+                        <li>A última tratativa desse arquivo vou realizar a conversão da data que estava no formato "string" para o formato "date" utilizando a função "to_date".</li>
                     </ul>
                 </div>
                 <div class="image-container">
@@ -154,11 +156,11 @@
             <div class="content-container">
                 <div class="text-container text-box">
                     <h2>Desenvolvimento Power BI</h2>
-                    <p>Filtros, Alteração de gráficos e botões</p>
+                    <p>Dataviz</p>
                     <ul>
-                        <li>Na imagem da 'Visão macro', ...</li>
-                        <li>Na imagem da 'Alterar a Visualização dos Gráficos', ...</li>
-                        <li>Na imagem da 'Filtro',...</li>
+                        <li>A ideia é apresentar um dashboard que apresente dados macros relevantas para a tomada de decisão, com base na dimensão de dados financeiros.</li>
+                        <li>As cores foram escolhidas com uma maior proporção branca, com tonalidades laranja e azul para que haja um conforto visual.</li>
+                        <li>Quando apontamos o mouse em algum dos marcadores do gráfico de linhas, aparece o quadro de "dicas de ferramentas" com as informação referente a "variação m/m-1".</li>
                     </ul>
                 </div>
                 <div class="image-container">
@@ -170,6 +172,12 @@
             <div class="content-container">
                 <div class="text-container text-box">
                     <p>Métricas, Indicadores e KPI's</p>
+                    <ul>
+                        <li>Receita Por Mês: o objetivo desta visualização é facilitar a identificação da evolução da Receita no decorrer dos meses, podendo assim passar o mouse sobre os marcadores e obter uma visão a variação do mês anterior das variáveis "var Receita m/m-1", "var Lucro m/m-1" e var Ticket Médio m/m-1".</li>
+                        <li>Receita Por País: Trazer o percentual e o valor absoluto da participação de cada País sob o valor total da Receita.</li>
+                        <li>Receita Por Produto: Trazer o percentual e o valor absoluto da participação de cada Produto sob o valor total da Receita.</li>
+                        <li>Comparativo Mensal: A ideia dessa tabela é trazer um comparativo mês a mês da evolução das vendas no decorrer do tempo. Esse comparativo possibiliza analisar a variação mês a mês, e no caso de gaps constantes, acionar as áreas responsáveis para realizar uma análise mais detalhada sobre os detratores dos resultados financeiros.</li>
+                </ul>
                 </div>
                 <div class="image-container">
                     <img src="imagens/sua-imagem.png" alt="Métricas, Indicadores e KPI's" onclick="zoomImage('imagens/sua-imagem.png')">
