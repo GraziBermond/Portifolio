@@ -149,11 +149,11 @@
                     <h2>Processo ETL</h2>
                     <p>Arquivo CSV tratado no Databricks</p>
                     <ul>
-                        <li>O dataset é uma amostra de dados do Power BI nomeada como "financials".</li>
-                        <li>Como os valores do dataset estavam em inglês, utilizei o laço "for" para realizar a tradução das colunas, seguido da função "withColumnRenamed".</li>
-                        <li>Utilizei também o laço "for" para traduzir o conteúdo das colunas, juntamente com a função "regexp_replace".</li>
-                        <li>Fiz a conversão dos valores que estavam como "string" para o formato "decimal". Um ponto importante é que no arquivo csv os valores decimais estavam como "vírgula" e foi necessário substituí-los como "ponto" para realizar a converção utilizando a função "cast".</li>
-                        <li>A última tratativa desse arquivo vou realizar a conversão da data que estava no formato "string" para o formato "date" utilizando a função "to_date".</li>
+                        <li>Tradução das Colunas: Através do laço "for", a nomenclatura das colunas foram traduzidas com o uso da da função "withColumnRenamed".</li>
+                        <li>Trdução do Conteúdo: O laço "for" também foi utilizado para traduzir o conteúdo das colunas, com o uso da função "regexp_replace".</li>
+                        <li>Conversão de Dados: Os dados que estavam como "string" foram convertidos para o formato "decimal".</li>
+                        <li>Um ponto importante é que no arquivo csv os valores decimais estavam como "vírgula" e foi necessário substituí-los como "ponto" para realizar a converção utilizando a função "cast".</li>
+                        <li>Conversão da Data: A data estava no formato "string" e foi convertida para o formato "date" utilizando a função "to_date".</li>
                     </ul>
                 </div>
                 <div class="image-container">
@@ -167,9 +167,9 @@
                     <h2>Desenvolvimento Power BI</h2>
                     <p>Dataviz</p>
                     <ul>
-                        <li>A ideia é apresentar um dashboard que apresente dados macros relevantas para a tomada de decisão, com base na dimensão de dados financeiros.</li>
-                        <li>As cores foram escolhidas com uma maior proporção branca, com tonalidades laranja e azul para que haja um conforto visual.</li>
-                        <li>Quando apontamos o mouse em algum dos marcadores do gráfico de linhas, aparece o quadro de "dicas de ferramentas" com as informação referente a "variação m/m-1".</li>
+                        <li>Esse Relatório apresenta dados com o dataset na dimensão de dados financeiros.</li>
+                        <li>Gráfico de Linha: Por ser uma série temporal, a escolha dessa visualização tem por finalidade entender os os picos e declpinios de uma forma rápida.</li>
+                        <li>Dicas de Ferramentas: Quando apontamos o mouse sob os marcadores do gráfico de linhas, é apresentada as informação referente a "variação m/m-1".</li>
                     </ul>
                 </div>
                 <div class="image-container">
