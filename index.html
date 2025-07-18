@@ -60,7 +60,7 @@
         .project-item .text-box {
             background-color: #ffffff;
             color: #205375;
-            padding: 10px;
+            padding: 12px;
         }
         .text-box h2 {
             font-size: 16px;
@@ -160,6 +160,15 @@
                         <li> Receita Por Produto: Apresenta o percentual e o valor absoluto da participação de cada Produto sob o valor total da Receita.</li>
                         <li> Comparativo Mensal: Apresenta um comparativo mês a mês da evolução das vendas no decorrer do tempo.</li>
                     </ul>
+                    <h2>Extração, Tranformação e Carregamento dos Dados</h2>
+                    <p>Arquivo CSV tratado no Pyspark</p>
+                    <ul>
+                        <li> Tradução das Colunas: A nomenclatura das colunas foram traduzidas com o uso da da função "withColumnRenamed".</li>
+                        <li> Trdução do Conteúdo: Traduzido o conteúdo das colunas, com o uso da função "regexp_replace".</li>
+                        <li> Conversão de Dados: Os dados que estavam como "string" foram convertidos para o formato "decimal".</li>
+                        <li> Os valores decimais estavam como "vírgula" e foi necessário substituí-los como "ponto", utilizando a função "cast".</li>
+                        <li> Conversão da Data: A data estava no formato "string" e foi convertida para o formato "date" utilizando a função "to_date".</li>
+                    </ul>                
                 </div>
                 <div class="image-container">
                     <img src="imagens/PBI_RelatorioerencialVendas.png" alt="Desenvolvimento Power BI" onclick="zoomImage('imagens/PBI_RelatorioerencialVendas.png')">
