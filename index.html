@@ -133,12 +133,12 @@
         }
 
         .project-item .text-container {
-            height: 600px;
+            height: 625px;
             overflow-y: auto;
         }
 
         .project-item .image-container {
-            height: 600px;
+            height: 625px;
             overflow: hidden;
         }
 
@@ -229,15 +229,19 @@
         </div>
     </div>
 
-    <script>
-        function zoomImage(imageUrl) {
-            document.getElementById('zoomedImage').src = imageUrl;
-            document.getElementById('zoomOverlay').classList.add('active');
-        }
+<div id="zoomOverlay" class="zoom-overlay">
+    <img id="zoomedImage" src="" alt="Imagem Ampliada">
+</div>
+<script>
+    function zoomImage(imageUrl) {
+        document.getElementById('zoomedImage').src = imageUrl;
+        document.getElementById('zoomOverlay').classList.add('active');
+    }
 
-        document.getElementById('zoomOverlay').addEventListener('click', function() {
-            this.classList.remove('active');
-        });
-    </script>
+    // Adicione o evento de clique para fechar o overlay
+    document.getElementById('zoomOverlay').addEventListener('click', function() {
+        this.classList.remove('active');
+    });
+</script>
 </body>
 </html>
