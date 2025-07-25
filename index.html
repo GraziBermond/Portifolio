@@ -5,25 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio da Grazi Bermond</title>
     <style>
+        /* RESET BÁSICO - IMPORTANTE! */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%; /* Garante que o html e o body ocupem toda a altura */
+            overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+        }
+
         body {
             background-color: #EFEFEF;
             font-family: Calibri, sans-serif;
-            margin: 0.5cm 0.3cm 0.1cm 0.5cm;
-            color: #ffffff;
+            color: #205375; /* Cor para o texto do corpo, já que a fixed-section tem cor própria */
+
+            /* IMPORTANTE: Adicione padding-top ao body para que o conteúdo rolável não fique por baixo da seção fixa */
+            /* Você precisará ajustar este valor (180px) para a altura exata da sua 'fixed-section' */
+            padding-top: 180px; /* Altura estimada da sua seção fixa + margens. AJUSTE ISSO! */
         }
 
-         .fixed-section {
-            position: fixed; /* Isso faz com que a div fique fixa na viewport */
-            top: 0; /* Alinha a div ao topo da viewport */
-            left: 0; /* Alinha a div à esquerda da viewport */
-            width: 100%; /* Faz com que ocupe a largura total da viewport */
-            /* Ajuste o padding do body para evitar que o conteúdo abaixo seja escondido */
-            /* O valor deve ser a altura da sua .fixed-section */
-            padding-top: 150px; /* Um valor estimado, ajuste conforme a altura real da sua seção fixa */
-            background-color: #EFEFEF; /* Cor de fundo para cobrir o conteúdo que rola por baixo */
-            z-index: 100; /* Garante que ela fique acima de outros elementos na rolagem */
-        }
+        .fixed-section {
+            position: fixed; /* Isso faz com que a div fique fixa na viewport */
+            top: 0; /* Alinha a div ao topo da viewport */
+            left: 0; /* Alinha a div à esquerda da viewport */
+            width: 100%; /* Faz com que ocupe a largura total da viewport */
+            background-color: #EFEFEF; /* Cor de fundo para cobrir o conteúdo que rola por baixo */
+            z-index: 100; /* Garante que ela fique acima de outros elementos na rolagem */
+            /* Adicione os paddings/margens *dentro* da fixed-section para o conteúdo dela */
+            padding: 0.5cm 0.3cm 0.1cm 0.5cm; /* Os mesmos valores de margin que estavam no body */
+            box-sizing: border-box; /* Garante que o padding seja incluído na largura/altura total */
+        }
         
+        /* Seus estilos existentes para .header, .divider, .button-container etc. */
         .header {
             text-align: center;
         }
@@ -56,6 +68,7 @@
             border-radius: 5px;
             margin: 0 10px;
         }
+        /* ... outros estilos que você já tinha ... */
         .project-container {
             display: flex;
             justify-content: space-around;
@@ -143,19 +156,22 @@
     </style>
 </head>
 <body>
-    <div class="fixed-section"> <div class="header">
-        <h1>Portfólio da Grazi Bermond</h1>
-        <p>Salve Pessoal, espero que esteja em paz.</p>
-        <p>Agradeço pela visita.</p>
-    </div>
-    
-    <div class="divider" style="border-color: #EFEFEF;"></div> 
-    
-    <div class="button-container">
-        <a href="https://www.linkedin.com/in/grazibermond/" target="_blank">LinkedIn</a>
-        <a href="https://wa.me/5511975366533" target="_blank">WhatsApp</a>
-        <a href="mailto:grabermond@gmail.com">Email</a>
-    </div>
+    <div class="fixed-section">
+        <div class="header">
+            <h1>Portfólio da Grazi Bermond</h1>
+            <p>Salve Pessoal, espero que esteja em paz.</p>
+            <p>Agradeço pela visita.</p>
+        </div>
+        
+        <div class="divider" style="border-color: #EFEFEF;"></div> 
+        
+        <div class="button-container">
+            <a href="https://www.linkedin.com/in/grazibermond/" target="_blank">LinkedIn</a>
+            <a href="https://wa.me/5511975366533" target="_blank">WhatsApp</a>
+            <a href="mailto:grabermond@gmail.com">Email</a>
+        </div>
+        
+        <div class="divider" style="border-color: #113d63;"></div>
     </div>
     
     <div class="divider" style="border-color: #113d63;"></div>
