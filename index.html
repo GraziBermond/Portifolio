@@ -5,37 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio da Grazi Bermond</title>
     <style>
-        /* RESET BÁSICO - IMPORTANTE! */
         html, body {
             margin: 0;
             padding: 0;
-            height: 100%; /* Garante que o html e o body ocupem toda a altura */
-            overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+            height: 100%;
+            overflow-x: hidden;
         }
 
         body {
             background-color: #EFEFEF;
             font-family: Calibri, sans-serif;
-            color: #205375; /* Cor para o texto do corpo, já que a fixed-section tem cor própria */
-
-            /* IMPORTANTE: Adicione padding-top ao body para que o conteúdo rolável não fique por baixo da seção fixa */
-            /* Você precisará ajustar este valor (180px) para a altura exata da sua 'fixed-section' */
-            padding-top: 180px; /* Altura estimada da sua seção fixa + margens. AJUSTE ISSO! */
+            color: #205375; 
+            padding-top: 180px;
         }
 
         .fixed-section {
-            position: fixed; /* Isso faz com que a div fique fixa na viewport */
-            top: 0; /* Alinha a div ao topo da viewport */
-            left: 0; /* Alinha a div à esquerda da viewport */
-            width: 100%; /* Faz com que ocupe a largura total da viewport */
-            background-color: #EFEFEF; /* Cor de fundo para cobrir o conteúdo que rola por baixo */
-            z-index: 100; /* Garante que ela fique acima de outros elementos na rolagem */
-            /* Adicione os paddings/margens *dentro* da fixed-section para o conteúdo dela */
-            padding: 0.5cm 0.3cm 0.1cm 0.5cm; /* Os mesmos valores de margin que estavam no body */
-            box-sizing: border-box; /* Garante que o padding seja incluído na largura/altura total */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #EFEFEF;
+            z-index: 100;
+            padding: 0.5cm 0.3cm 0.1cm 0.5cm;
+            box-sizing: border-box;
         }
         
-        /* Seus estilos existentes para .header, .divider, .button-container etc. */
         .header {
             text-align: center;
         }
@@ -68,7 +62,6 @@
             border-radius: 5px;
             margin: 0 10px;
         }
-        /* ... outros estilos que você já tinha ... */
         .project-container {
             display: flex;
             justify-content: space-around;
@@ -93,9 +86,7 @@
             font-weight: bold;
             text-align: center;
             margin-bottom: 5px;
-            color: #F66B0E;
-            border-bottom: 0,5px solid #112B3C;
-            margin: 25px 0;            
+            color: #F66B0E;          
         }
         .text-box p {
             font-size: 13px;
@@ -135,12 +126,12 @@
         }
 
         .project-item .text-container {
-            height: 625px;
+            height: 640px;
             overflow-y: auto;
         }
 
         .project-item .image-container {
-            height: 625px;
+            height: 640px;
             overflow: hidden;
         }
 
@@ -186,7 +177,7 @@
             <div class="content-container">
                 <div class="text-container text-box">
                     <h2> Propósito </h2>
-                    <p> O sentido para a existência de um negócio é que através da comercialização dos seus produtos/serviços seja possível a obtenção de lucros.</p>
+                    <p> O sentido para a existência de um negócio é que, através da comercialização de seus produtos/serviços, seja possível a obtenção de lucros.</p>
                     <p> Acompanhar a evolução das vendas é de suma importância, visto que é possível observar qual a direção que o seu negócio está seguindo.</p>              
                     <p> O <b>Relatório Mensal de Vendas</b> tem por finalidade apresentar informações que esclareçam questões como:</p> 
                     <ul>
@@ -240,7 +231,6 @@
         document.getElementById('zoomOverlay').classList.add('active');
     }
 
-    // Adicione o evento de clique para fechar o overlay
     document.getElementById('zoomOverlay').addEventListener('click', function() {
         this.classList.remove('active');
     });
