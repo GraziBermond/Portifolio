@@ -11,6 +11,19 @@
             margin: 0.5cm 0.3cm 0.1cm 0.5cm;
             color: #ffffff;
         }
+
+         .fixed-section {
+            position: fixed; /* Isso faz com que a div fique fixa na viewport */
+            top: 0; /* Alinha a div ao topo da viewport */
+            left: 0; /* Alinha a div à esquerda da viewport */
+            width: 100%; /* Faz com que ocupe a largura total da viewport */
+            /* Ajuste o padding do body para evitar que o conteúdo abaixo seja escondido */
+            /* O valor deve ser a altura da sua .fixed-section */
+            padding-top: 150px; /* Um valor estimado, ajuste conforme a altura real da sua seção fixa */
+            background-color: #EFEFEF; /* Cor de fundo para cobrir o conteúdo que rola por baixo */
+            z-index: 100; /* Garante que ela fique acima de outros elementos na rolagem */
+        }
+        
         .header {
             text-align: center;
         }
@@ -130,7 +143,7 @@
     </style>
 </head>
 <body>
-    <div class="header">
+    <div class="fixed-section"> <div class="header">
         <h1>Portfólio da Grazi Bermond</h1>
         <p>Salve Pessoal, espero que esteja em paz.</p>
         <p>Agradeço pela visita.</p>
@@ -143,9 +156,10 @@
         <a href="https://wa.me/5511975366533" target="_blank">WhatsApp</a>
         <a href="mailto:grabermond@gmail.com">Email</a>
     </div>
+    </div>
     
     <div class="divider" style="border-color: #113d63;"></div>
-    
+
     <div class="bloco relatorio-titulo">POWER BI: RELATÓRIO MENSAL DE VENDAS</div>
     <div class="divider" style="border-color: #EFEFEF;"></div>    
     <div class="project-container">
