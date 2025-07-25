@@ -176,7 +176,7 @@
         <div class="project-item">
             <div class="content-container">
                 <div class="text-container text-box">
-                    <h2> Propósito </h2>
+                    <h2> PORPÓSITO </h2>
                     <p> O sentido para a existência de um negócio é que, através da comercialização de seus produtos/serviços, seja possível a obtenção de lucros.</p>
                     <p> Acompanhar a evolução das vendas é de suma importância, visto que é possível observar qual a direção que o seu negócio está seguindo.</p>              
                     <p> O <b>Relatório Mensal de Vendas</b> tem por finalidade apresentar informações que esclareçam questões como:</p> 
@@ -188,7 +188,7 @@
                         <li> Qual é a quantidade média que vendo por cliente?</li>
                     </ul>
 
-                    <h2> Contexto</h2>
+                    <h2> CONTEXTO </h2>
                     <p> O Relatório Mensal de Vendas apresenta a evolução das vendas de Bicicletas no decorrer do ano de 2014.</p>
                     <p> Podemos observar que:</p>                    
                     <ul>
@@ -200,7 +200,7 @@
                         <li> O Ticket Médio é de <b>R$ 115</b>, sendo a Bicicleta VTT com o maior valor de Ticket Médio <b>R$ 127</b> e a Bicicleta Montana com o de menor valor <b>R$ 105</b> .</li>
                     </ul>
 
-                    <h2> Conceitos </h2>
+                    <h2> CONCEITOS </h2>
                     <p> Como os Indicadores foram calculados: </p>
                     <ul>
                         <li> <b>Venda Bruta:</b> Soma de todas das vendas realizadas.</li>
@@ -222,9 +222,56 @@
         </div>
     </div>
 
+    <div class="divider" style="border-color: #EFEFEF;"></div> 
+    <div class="relatorio-titulo">PYTHON: TRATANDO A BASE CSV DO RELATÓRIO MENSAL DE VENDAS</div>   
+    <div class="project-container">
+        <div class="project-item">
+            <div class="content-container">
+                <div class="text-container text-box">
+                    <h2> ETL - Tratando os dados para uma análise de qualidade </h2>
+                    <p> É de suma importância tratar os dados anter da construção de um dashboard/relatório. <br>
+                        Remover espaços desnecessários, corrigir erros de ortografia, padronizar colunas categóricas, converter as variáveis para os tipos corretos são algumas boas práticas que precisam ser aplicadas. <br>
+                        Embora este seja um material de demonstração, também poderia ser realizado um <b>processo de automação<b> desde a subida do um arquivo em um ambiente na nuvem, <b>sharepoint por exemplo</b>, validação dos nomes das colunas, validação de campos obrigatórios como nulos, enfim, são inúmeras as possíbilidades.<br>
+                        O intuito aqui é demonstrar de forma simples a importância de cuidar desde a tradução de um arquivo, até a remoção de campos desnecessários.
+        
+                    <h2> EXTRAÇÃO </h2>
+                    <p> As informações do <b>Relatório Mensal de Vendas</b> foram extraídas dos dados de amostra do Power BI e salvo em um arquivo no formato csv.</p>
+                    <p> Utilizei a biblioteca <b>Pandas</b> para realizar o processo ETL
+                    <ul>
+                        <li> Os dados foram carregado no Python através da função <b>pd.read_csv</b></li>
+                        <li> Defino algumas inconsistências no arquivo csv, foi necessário o uso dos parâmetros: <b>sep=';', engine='python', on_bad_lines='skip'</b></li>
+                    </ul>
+
+                    <h2> TRANSFORMAÇÃO </h2>                  
+                    <ul>
+                        <li> Através da função <b>.rename</b>, realizei a tradução dos nomes das colunas.<br>
+                        <li> Os valores das linhas foram traduzidos através da função <b>replace</b>.</li>
+                        <li> A coluna 'Faixa de Descontos' possuia alguns valores nulos, que foram tratados através da função <b>fillna</b> preenchendo esses campos com a palavra "nenhum".</li>
+                        <li> A função <b>pd.to_numeric</b> foi importante na tratativa dos valores numéricos que haviam sido carregados como string.</li>
+                        <li> O Campo de data também foi tratado utilizando a função <b>pd.to_datetime</b>.</li>
+                    </ul>
+
+                    <h2> CARREGAMENTO </h2>
+                    <p> Os dados foram carregados no Power BI através do conector <b>Script do Python</b> </p>
+
+                </div>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="content-container">
+                <div class="text-container text-box">
+                    <h2> Dashboard </h2>
+                    <p>Clique sobre a imagem para ampliá-la</p>
+                    <img src="imagens/Python_RelatorioerencialVendas.png" alt="Tratando dados Através do Python" onclick="zoomImage('imagens/Python_RelatorioerencialVendas.png')">
+                </div>
+            </div>
+        </div>
+    </div>
+
 <div id="zoomOverlay" class="zoom-overlay">
     <img id="zoomedImage" src="" alt="Imagem Ampliada">
 </div>
+    
 <script>
     function zoomImage(imageUrl) {
         document.getElementById('zoomedImage').src = imageUrl;
