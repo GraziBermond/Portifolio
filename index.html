@@ -5,20 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio da Grazi Bermond</title>
     <style>
+        /* Estilos gerais */
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
             overflow-x: hidden;
+            font-family: Calibri, sans-serif;
+            color: #205375;
         }
 
         body {
             background-color: #EFEFEF;
-            font-family: Calibri, sans-serif;
-            color: #205375; 
-            padding-top: 180px;
+            padding-top: 200px; /* Ajuste o padding para acomodar a seção fixa */
         }
 
+        /* Seção de cabeçalho fixa */
         .fixed-section {
             position: fixed;
             top: 0;
@@ -26,8 +28,9 @@
             width: 100%;
             background-color: #EFEFEF;
             z-index: 100;
-            padding: 0.5cm 0.3cm 0.1cm 0.5cm;
+            padding: 10px;
             box-sizing: border-box;
+            border-bottom: 1px solid #113d63; /* Adicionado para destacar a separação */
         }
         
         .header {
@@ -37,21 +40,22 @@
             color: #205375;
             font-size: 28px;
             font-weight: bold;
-            margin-bottom: 0;
+            margin-bottom: 5px;
         }
         .header p {
             color: #205375;
-            font-size: 19px;
-            margin-top: 5px;
+            font-size: 16px;
+            margin: 5px auto;
+            max-width: 800px; /* Limita a largura do parágrafo para melhor leitura */
         }
-        .divider {
-            border-bottom: 1px solid #112B3C;
-            margin: 10px 0;
-        }
+
+        /* Botões de contato */
         .button-container {
             display: flex;
             justify-content: center;
-            margin: 20px 0;
+            flex-wrap: wrap; /* Permite quebrar a linha em telas menores */
+            gap: 15px; /* Adiciona espaço entre os botões */
+            margin-top: 15px;
         }
         .button-container a {
             background-color: #F66B0E;
@@ -60,47 +64,68 @@
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
-            margin: 0 10px;
+            white-space: nowrap; /* Evita que os textos dos botões quebrem */
         }
+
+        /* Título do relatório */
+        .relatorio-titulo {
+            background-color: #205375;
+            color: #ffffff;
+            padding: 14px;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        /* Container dos projetos */
         .project-container {
             display: flex;
-            justify-content: space-around;
             flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px; /* Espaço entre os itens do projeto */
+            padding: 0 20px;
         }
+        
         .project-item {
-            width: 46%;
-            margin-bottom: 20px;
-        }
-        .project-item img {
+            display: flex;
+            flex-direction: column;
             width: 100%;
-            height: auto;
-            cursor: pointer;
+            max-width: 600px; /* Largura máxima para telas maiores */
+            margin-bottom: 30px;
         }
+
         .project-item .text-box {
             background-color: #ffffff;
             color: #205375;
-            padding: 13px;
+            padding: 20px;
         }
-        .text-box h2 {
-            font-size: 16px;
+
+        .project-item .text-box h2 {
+            font-size: 18px;
             font-weight: bold;
             text-align: center;
-            margin-bottom: 5px;
-            color: #F66B0E;          
+            margin-bottom: 10px;
+            color: #F66B0E;
         }
-        .text-box p {
-            font-size: 13px;
-            font-style: italic;
-            text-align: justify;          
-        }
-        .text-box ul {
-            font-size: 13px;
+        .project-item .text-box p, .project-item .text-box ul {
+            font-size: 14px;
             text-align: justify;
+            line-height: 1.5; /* Melhora a legibilidade */
+        }
+        .project-item .text-box ul {
             padding-left: 20px;
         }
-        .text-box ul li {
-            margin-bottom: 5px;
+        
+        .project-item .text-box img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            display: block;
+            margin-top: 15px;
+            border: 1px solid #ddd;
         }
+
+        /* Zoom da imagem */
         .zoom-overlay {
             display: none;
             position: fixed;
@@ -108,7 +133,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.9);
             justify-content: center;
             align-items: center;
             z-index: 1000;
@@ -120,32 +145,32 @@
         .zoom-overlay.active {
             display: flex;
         }
-        .project-item .content-container {
-            display: flex;
-            flex-direction: column;
+
+        /* Media Queries para telas maiores que 768px (tablets e desktops) */
+        @media (min-width: 768px) {
+            .project-container {
+                justify-content: center;
+                gap: 20px;
+            }
+            .project-item {
+                width: 48%; /* Ocupa metade da largura, com um pequeno espaço entre eles */
+                max-width: 500px;
+            }
+            .header p {
+                font-size: 19px;
+            }
         }
 
-        .project-item .text-container {
-            height: 640px;
-            overflow-y: auto;
-        }
-
-        .project-item .image-container {
-            height: 640px;
-            overflow: hidden;
-        }
-
-        .project-item .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .relatorio-titulo {
-            background-color: #205375;
-            color: #ffffff;
-            padding: 14px;
-            text-align: center;
-            margin: 10px 0;
+        /* Media Queries para telas muito grandes (widescreen) */
+        @media (min-width: 1200px) {
+            .project-container {
+                justify-content: center;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .project-item {
+                max-width: 550px;
+            }
         }
     </style>
 </head>
@@ -154,139 +179,116 @@
         <div class="header">
             <h1>Portfólio da Grazi Bermond</h1>
             <p>Com quatro anos de experiência em Análise de Dados e uma década de vivência em suporte técnico, transformo dados brutos em insights acionáveis, unindo a capacidade analítica à visão de quem resolve problemas na prática.</p>
-            <p>𝐕𝐚𝐦𝐨𝐬 𝐜𝐨𝐧𝐯𝐞𝐫𝐬𝐚𝐫! Estou sempre aberta a explorar oportunidades onde minhas habilidades possam agregar valor.</p>
+            <p><strong>Vamos conversar!</strong> Estou sempre aberta a explorar oportunidades onde minhas habilidades possam agregar valor.</p>
         </div>
-        
-        <div class="divider" style="border-color: #EFEFEF;"></div> 
         
         <div class="button-container">
             <a href="https://www.linkedin.com/in/grazibermond/" target="_blank">LinkedIn</a>
             <a href="https://wa.me/5511975366533" target="_blank">WhatsApp</a>
             <a href="mailto:grabermond@gmail.com">Email</a>
-        </div> 
-        <div class="divider" style="border-color: #113d63;"></div>        
-    </div> 
+        </div>
+    </div>
 
-    <div class="relatorio-titulo"></div>
-    <div class="relatorio-titulo"></div>
-    <div class="relatorio-titulo"></div>
-    <div class="divider" style="border-color: #EFEFEF;"></div>
-    
-    <div class="divider" style="border-color: #EFEFEF;"></div> 
-    <div class="relatorio-titulo">POWER BI: RELATÓRIO MENSAL DE VENDAS</div>   
+    <div class="relatorio-titulo">POWER BI: RELATÓRIO MENSAL DE VENDAS</div>
     <div class="project-container">
         <div class="project-item">
-            <div class="content-container">
-                <div class="text-container text-box">
-                    <h2> PROPÓSITO </h2>
-                    <p> O sentido para a existência de um negócio é que, através da comercialização de seus produtos/serviços, seja possível a obtenção de lucros.</p>
-                    <p> Acompanhar a evolução das vendas é de suma importância, visto que é possível observar qual a direção que o seu negócio está seguindo.</p>              
-                    <p> O <b>Relatório Mensal de Vendas</b> tem por finalidade apresentar informações que esclareçam questões como:</p> 
-                    <ul>
-                        <li> Qual foi meu lucro?  </li>
-                        <li> Onde está meu cliente?</li>
-                        <li> O que meu cliente está comprando?</li>
-                        <li> Com que frequência estou vendendo?</li>
-                        <li> Qual é a quantidade média que vendo por cliente?</li>
-                    </ul>
+            <div class="text-box">
+                <h2> PROPÓSITO </h2>
+                <p> O sentido para a existência de um negócio é que, através da comercialização de seus produtos/serviços, seja possível a obtenção de lucros.</p>
+                <p> Acompanhar a evolução das vendas é de suma importância, visto que é possível observar qual a direção que o seu negócio está seguindo.</p>
+                <p> O <strong>Relatório Mensal de Vendas</strong> tem por finalidade apresentar informações que esclareçam questões como:</p>
+                <ul>
+                    <li> Qual foi meu lucro? </li>
+                    <li> Onde está meu cliente?</li>
+                    <li> O que meu cliente está comprando?</li>
+                    <li> Com que frequência estou vendendo?</li>
+                    <li> Qual é a quantidade média que vendo por cliente?</li>
+                </ul>
 
-                    <h2> CONTEXTO </h2>
-                    <p> O Relatório Mensal de Vendas apresenta a evolução das vendas de Bicicletas no decorrer do ano de 2014.</p>
-                    <p> Podemos observar que:</p>                    
-                    <ul>
-                        <li> O Lucro Bruto foi de <b>R$ 2.007 Milhões</b>, o que representa uma Margem de <b>20,20%</b>.<br>
-                             No Brasil a Média da Margem Bruta pode variar entre <b>15% e 40%</b>, podendo assim observar que a Margem Bruta está dentro da Média Nacional. </li>
-                        <li> Nossos clientes se concentram em 05 Países: Estados Unidos, Canadá, França, Alemanha e México, e a participação de Venda Bruta está <i>uniformemente distribuída</i>.</li>
-                        <li> O Produto com maior participação em Venda Bruta é a Bicicleta Paseo representando <b>29,35%</b>, e com um Ticket Médio de <b>R$ 114</b>.</li>
-                        <li> Os meses de <i>Julho, Outubro e Dezembro foram os meses que tivemos Picos de Vendas</i> e o Novembro foi o mês de mais baixa venda.</li>
-                        <li> O Ticket Médio é de <b>R$ 115</b>, sendo a Bicicleta VTT com o maior valor de Ticket Médio <b>R$ 127</b> e a Bicicleta Montana com o de menor valor <b>R$ 105</b> .</li>
-                    </ul>
+                <h2> CONTEXTO </h2>
+                <p> O Relatório Mensal de Vendas apresenta a evolução das vendas de Bicicletas no decorrer do ano de 2014.</p>
+                <p> Podemos observar que:</p>
+                <ul>
+                    <li> O Lucro Bruto foi de <strong>R$ 2.007 Milhões</strong>, o que representa uma Margem de <strong>20,20%</strong>.<br>
+                        No Brasil a Média da Margem Bruta pode variar entre <strong>15% e 40%</strong>, podendo assim observar que a Margem Bruta está dentro da Média Nacional. </li>
+                    <li> Nossos clientes se concentram em 05 Países: Estados Unidos, Canadá, França, Alemanha e México, e a participação de Venda Bruta está <em>uniformemente distribuída</em>.</li>
+                    <li> O Produto com maior participação em Venda Bruta é a Bicicleta Paseo representando <strong>29,35%</strong>, e com um Ticket Médio de <strong>R$ 114</strong>.</li>
+                    <li> Os meses de <em>Julho, Outubro e Dezembro foram os meses que tivemos Picos de Vendas</em> e o Novembro foi o mês de mais baixa venda.</li>
+                    <li> O Ticket Médio é de <strong>R$ 115</strong>, sendo a Bicicleta VTT com o maior valor de Ticket Médio <strong>R$ 127</strong> e a Bicicleta Montana com o de menor valor <strong>R$ 105</strong>.</li>
+                </ul>
 
-                    <h2> CONCEITOS </h2>
-                    <p> Como os Indicadores foram calculados: </p>
-                    <ul>
-                        <li> <b>Venda Bruta:</b> Soma de todas das vendas realizadas.</li>
-                        <li> <b>Lucro Bruto:</b> Soma da Venda Bruta (-) Soma dos Custos dos Produtos Vendidos.</li>
-                        <li> <b>Margem Lucro Bruto:</b> Soma do Lucro Bruto (-) Soma da Venda Bruta.</li>
-                        <li> <b>Ticket Médio:</b> Soma da Venda Bruta (/) Soma das Unidades Vendidas.</li>
-                    </ul>
-                </div>
+                <h2> CONCEITOS </h2>
+                <p> Como os Indicadores foram calculados: </p>
+                <ul>
+                    <li> <strong>Venda Bruta:</strong> Soma de todas das vendas realizadas.</li>
+                    <li> <strong>Lucro Bruto:</strong> Soma da Venda Bruta (-) Soma dos Custos dos Produtos Vendidos.</li>
+                    <li> <strong>Margem Lucro Bruto:</strong> Soma do Lucro Bruto (-) Soma da Venda Bruta.</li>
+                    <li> <strong>Ticket Médio:</strong> Soma da Venda Bruta (/) Soma das Unidades Vendidas.</li>
+                </ul>
             </div>
         </div>
         <div class="project-item">
-            <div class="content-container">
-                <div class="text-container text-box">
-                    <h2> DASHBOARD </h2>
-                    <p>Clique sobre a imagem para ampliá-la</p>
-                    <img src="imagens/PBI_RelatorioerencialVendas.png" alt="Desenvolvimento Power BI" onclick="zoomImage('imagens/PBI_RelatorioerencialVendas.png')">
-                </div>
+            <div class="text-box">
+                <h2> DASHBOARD </h2>
+                <p>Clique sobre a imagem para ampliá-la</p>
+                <img src="imagens/PBI_RelatorioerencialVendas.png" alt="Desenvolvimento Power BI" onclick="zoomImage('imagens/PBI_RelatorioerencialVendas.png')">
             </div>
         </div>
     </div>
 
-    <div class="divider" style="border-color: #EFEFEF;"></div> 
-    <div class="relatorio-titulo">PYTHON: TRATANDO A BASE CSV DO RELATÓRIO MENSAL DE VENDAS</div>   
+    <div class="relatorio-titulo">PYTHON: TRATANDO A BASE CSV DO RELATÓRIO MENSAL DE VENDAS</div>
     <div class="project-container">
         <div class="project-item">
-            <div class="content-container">
-                <div class="text-container text-box">
-                    <h2> ETL - TRATANDO OS DADOS PARA UMA ANÁLISE DE QUALIDADE </h2>
-                    <p> É de suma importância tratar os dados antes de iniciar o desenvolvimento de um dashboard/relatório. <br>
-                        Remover espaços desnecessários, corrigir erros ortograficos, padronizar os valores de colunas categóricas, converter as variáveis para os tipos corretos são alguns exemplos de boas práticas que precisam ser aplicadas. <br>
-                        É possível também <b>automatizar todo o processo</b>, desde a subida do arquivo inicial em um ambiente na nuvem, <b>sharepoint</b> por exemplo, validar os nomes e quantidades de colunas, enfim, são inúmeras as possíbilidades.<br>
-                        O intuito aqui é demonstrar de forma simples a importância de tratar desde a tradução dos valores (quando necessário), até a remoção de campos desnecessários, proporcionando um arquivo de qualidade para as próximas etapas.
+            <div class="text-box">
+                <h2> ETL - TRATANDO OS DADOS PARA UMA ANÁLISE DE QUALIDADE </h2>
+                <p> É de suma importância tratar os dados antes de iniciar o desenvolvimento de um dashboard/relatório. <br>
+                    Remover espaços desnecessários, corrigir erros ortograficos, padronizar os valores de colunas categóricas, converter as variáveis para os tipos corretos são alguns exemplos de boas práticas que precisam ser aplicadas. <br>
+                    É possível também <strong>automatizar todo o processo</strong>, desde a subida do arquivo inicial em um ambiente na nuvem, <strong>sharepoint</strong> por exemplo, validar os nomes e quantidades de colunas, enfim, são inúmeras as possíbilidades.<br>
+                    O intuito aqui é demonstrar de forma simples a importância de tratar desde a tradução dos valores (quando necessário), até a remoção de campos desnecessários, proporcionando um arquivo de qualidade para as próximas etapas.</p>
         
-                    <h2> EXTRAÇÃO </h2>
-                    <p> As informações do <b>Relatório Mensal de Vendas</b> foram extraídas dos dados de amostra do Power BI e salvo em um arquivo no formato csv.</p>
-                    <p> Utilizei a biblioteca <b>Pandas</b> para realizar o processo ETL</p>
-                    <ul>
-                        <li> Os dados foram carregado no Python através da função <b>pd.read_csv</b></li>
-                        <li> Defino algumas inconsistências no arquivo csv, foi necessário o uso dos parâmetros: <b>sep=';', engine='python', on_bad_lines='skip'</b></li>
-                    </ul>
+                <h2> EXTRAÇÃO </h2>
+                <p> As informações do <strong>Relatório Mensal de Vendas</strong> foram extraídas dos dados de amostra do Power BI e salvo em um arquivo no formato csv.</p>
+                <p> Utilizei a biblioteca <strong>Pandas</strong> para realizar o processo ETL</p>
+                <ul>
+                    <li> Os dados foram carregado no Python através da função <strong>pd.read_csv</strong></li>
+                    <li> Defino algumas inconsistências no arquivo csv, foi necessário o uso dos parâmetros: <strong>sep=';', engine='python', on_bad_lines='skip'</strong></li>
+                </ul>
 
-                    <h2> TRANSFORMAÇÃO </h2>                  
-                    <ul>
-                        <li> Através da função <b>.rename</b>, realizei a tradução dos nomes das colunas.<br>
-                        <li> Os valores das linhas foram traduzidos através da função <b>replace</b>.</li>
-                        <li> A coluna 'Faixa de Descontos' possuia alguns valores nulos, que foram tratados através da função <b>fillna</b> preenchendo esses campos com a palavra "nenhum".</li>
-                        <li> A função <b>pd.to_numeric</b> foi importante na tratativa dos valores numéricos que haviam sido carregados como string.</li>
-                        <li> O Campo de data também foi tratado utilizando a função <b>pd.to_datetime</b>.</li>
-                    </ul>
+                <h2> TRANSFORMAÇÃO </h2>
+                <ul>
+                    <li> Através da função <strong>.rename</strong>, realizei a tradução dos nomes das colunas.<br>
+                    <li> Os valores das linhas foram traduzidos através da função <strong>replace</strong>.</li>
+                    <li> A coluna 'Faixa de Descontos' possuia alguns valores nulos, que foram tratados através da função <strong>fillna</strong> preenchendo esses campos com a palavra "nenhum".</li>
+                    <li> A função <strong>pd.to_numeric</strong> foi importante na tratativa dos valores numéricos que haviam sido carregados como string.</li>
+                    <li> O Campo de data também foi tratado utilizando a função <strong>pd.to_datetime</strong>.</li>
+                </ul>
 
-                    <h2> CARREGAMENTO </h2>
-                    <p> Os dados foram carregados no Power BI através do conector <b>Script do Python</b> </p>
-
-                </div>
+                <h2> CARREGAMENTO </h2>
+                <p> Os dados foram carregados no Power BI através do conector <strong>Script do Python</strong> </p>
             </div>
         </div>
         <div class="project-item">
-            <div class="content-container">
-                <div class="text-container text-box">
-                    <h2> PROCESSO ETL </h2>
-                    <p>Clique sobre a imagem para ampliá-la</p>
-                    <img src="imagens/Python_RelatorioerencialVendas.png" alt="Tratando dados Através do Python" onclick="zoomImage('imagens/Python_RelatorioerencialVendas.png')">
-                </div>
+            <div class="text-box">
+                <h2> PROCESSO ETL </h2>
+                <p>Clique sobre a imagem para ampliá-la</p>
+                <img src="imagens/Python_RelatorioerencialVendas.png" alt="Tratando dados Através do Python" onclick="zoomImage('imagens/Python_RelatorioerencialVendas.png')">
             </div>
         </div>
     </div>
 
-<div id="zoomOverlay" class="zoom-overlay">
-    <img id="zoomedImage" src="" alt="Imagem Ampliada">
-</div>
-    
-<script>
-    function zoomImage(imageUrl) {
-        document.getElementById('zoomedImage').src = imageUrl;
-        document.getElementById('zoomOverlay').classList.add('active');
-    }
+    <div id="zoomOverlay" class="zoom-overlay">
+        <img id="zoomedImage" src="" alt="Imagem Ampliada">
+    </div>
+        
+    <script>
+        function zoomImage(imageUrl) {
+            document.getElementById('zoomedImage').src = imageUrl;
+            document.getElementById('zoomOverlay').classList.add('active');
+        }
 
-    document.getElementById('zoomOverlay').addEventListener('click', function() {
-        this.classList.remove('active');
-    });
-</script>
+        document.getElementById('zoomOverlay').addEventListener('click', function() {
+            this.classList.remove('active');
+        });
+    </script>
 </body>
 </html>
-
-
-
-
