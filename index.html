@@ -178,7 +178,9 @@
     <div class="fixed-section">
         <div class="header">
             <h1>Portfólio da Grazi Bermond</h1>
-            <p>Com quatro anos de experiência em Análise de Dados e uma década de vivência em suporte técnico, transformo dados brutos em insights acionáveis, unindo a capacidade analítica à visão de quem resolve problemas na prática.</p>
+            <p>Profissional com 15 anos de experiência na área de tecnologia, sendo os últimos 6 anos com foco em dados. 
+                Vivência em diversos setores, incluindo Varejo e Consultoria de TI, com atuação focada em Inteligência Comercial, CRM e Gestão de Operações.
+                Falicitadora em interagir entre as áreas de negócio e o time de dados, transformando os dados em insigths significativos, atuando desde o entendimento do problema até o desenvolvimento de dashboards.</p>
             <p><strong>Vamos conversar!</strong></p>
         </div>
         
@@ -191,6 +193,52 @@
 
     <div class="project-item"></div>
     <div class="divider" style="border-color: #EFEFEF;"></div>
+
+            <div class="project-item">
+            <div class="text-box">
+                <h2> DASHBOARD </h2>
+                <p>Clique sobre a imagem para ampliá-la</p>
+                <img src="imagens/PBI_AnaliseFaturamento.png" alt="Desenvolvimento Power BI" onclick="zoomImage('imagens/PBI_AnaliseFaturamento.png')">
+            </div>
+        </div>
+    </div>
+    
+    <div class="relatorio-titulo">POWER BI: ANÁLISE DE FATURAMENTO</div>
+    <div class="project-container">
+        <div class="project-item">
+            <div class="text-box">
+                <h2> PROPÓSITO </h2>
+                <p> A <strong> Análise de Faturamento</strong> tem por finalidade apresentar informações que esclareçam questões como:</p>
+                <ul>
+                    <li> Qual foi o faturamento total da minha empresa? </li>
+                    <li> Qual é o percentual do faturamento para o Cliente Fidelidade?</li>
+                    <li> Qual é o percentual do custo com envio?</li>
+                    <li> Qual é a participação de vendas por produto?</li>
+                    <li> Qual é a evolução do meu faturamento?</li>
+                </ul>
+
+                <h2> CONTEXTO </h2>
+                <p> A Análise de Faturamento apresenta a evolução dos produtos faturados entre os anos de 2020 e 2025.</p>
+                <p> Podemos observar que:</p>
+                <ul>
+                    <li> O Faturamento total foi de <strong>R$ 4.385 Mil</strong>, tendo um equilibrio entre os canais de vendas: <strong>49,8%</strong> do faturamento ocorreu por transações de lojas físicas e <strong>50,2%</strong> por lojas online.<br></li>
+                    <li> Consideramos Cliente Fidelidade aquele público que realizou mais do que uma compra no decorrer de todo o histórico de faturamento.<br>
+                         Existe uma oportunidade de melhoria desse indicador, visto que <strong>apenas 22,6% do nosso faturamento é para esse público.</strong></li>
+                    <li> Das 04 transportadoras que temos contrato - FedEx, UPS, DHL e Royal Mail, temos uma maior participação da FedEx com 25,1%, sendo que o custo total com envio é de <strong>18,9% do faturamento</strong>.</li>
+                    <li> A Caneca Branca teve uma melhor performance de vendas representando <strong>participação de 9,2% do faturamento total</strong>strong>.</li>
+                    <li> Observando todos os períodos, compreendemos uma queda constante no faturamentos nos meses de <em>Fevereiro e Novembro</em>, demonstrando ser um evento sazonal.</li>
+                </ul>
+
+                <h2> CONCEITOS </h2>
+                <p> Como os dados foram tratados: </p>
+                <ul>
+                    <li> <strong>Python:</strong> Os dados foram importados, padronizados através do Python, utilizando a biblioteca Pandas.</li>
+                    <li> <strong>Conexão via API:</strong> Utilizamos a importação dos dados do Kaggle via API</li>
+                    <li> <strong>Normalização:</strong> Identificamos um padrão para as vendas que não foram faturadas, sendo os campos <em>ClienteID, Localizacao_CD em branco e Quantidade' menor que zero 0</em>, classificando esses registros como não faturado.</li>
+                </ul>
+            </div>
+        </div>
+
 
     <div class="relatorio-titulo">EXCEL: RELATÓRIO DE PLANEJAMENTO COMERCIAL</div>
     <div class="project-container">
@@ -228,6 +276,7 @@
                 </ul>
             </div>
         </div>
+        
         <div class="project-item">
             <div class="text-box">
                 <h2> DASHBOARD </h2>
@@ -275,6 +324,7 @@
                 </ul>
             </div>
         </div>
+        
         <div class="project-item">
             <div class="text-box">
                 <h2> DASHBOARD </h2>
@@ -315,6 +365,7 @@
                 <p> Os dados foram carregados no Power BI através do conector <strong>Script do Python</strong> </p>
             </div>
         </div>
+        
         <div class="project-item">
             <div class="text-box">
                 <h2> PROCESSO ETL </h2>
@@ -340,6 +391,7 @@
     </script>
 </body>
 </html>
+
 
 
 
